@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esther Katina, AAPC | Life Coach • Women's & Teen Coaching</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Cormorant Garamond for elegant editorial serifs & Manrope for clean modern sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        deepPlum: '#302432',
+                        dustyRose: '#C58F91',
+                        mutedSage: '#87988A',
+                        warmTerracotta: '#B86F5E',
+                        softCream: '#F8F3EC',
+                        warmSand: '#E8DCCE',
+                        champagne: '#C5A56A',
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Manrope"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #F8F3EC;
+            color: #302432;
+            overflow-x: hidden;
+        }
+        .font-serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F8F3EC;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #87988A;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #C5A56A;
+        }
+        .reveal-hidden {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .image-blur-load {
+            filter: blur(12px);
+            transition: filter 1.2s ease-out;
+        }
+        .image-blur-load.loaded {
+            filter: blur(0);
+        }
+    </style>
+</head>
+<body class="bg-[#F8F3EC] text-[#302432] antialiased selection:bg-[#C5A56A] selection:text-white">
+
+    <!-- Floating Header -->
+    <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent py-6 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <a href="#" class="group">
+                <span class="font-serif text-xl md:text-2xl font-semibold tracking-wide text-[#302432] group-hover:text-[#B86F5E] transition-colors">ESTHER KATINA</span>
+                <span class="block text-[10px] uppercase tracking-widest text-[#87988A] font-semibold mt-0.5">LIFE COACH • WOMEN & TEENS</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-[#302432]">
+                <a href="#about" class="hover:text-[#B86F5E] transition-colors">About</a>
+                <a href="#coaching" class="hover:text-[#B86F5E] transition-colors">Coaching</a>
+                <a href="#approach" class="hover:text-[#B86F5E] transition-colors">Approach</a>
+                <a href="#women" class="hover:text-[#B86F5E] transition-colors">For Women</a>
+                <a href="#teens" class="hover:text-[#B86F5E] transition-colors">For Teens</a>
+                <a href="#contact" class="hover:text-[#B86F5E] transition-colors">Contact</a>
+            </nav>
+
+            <!-- Header CTA Button -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#contact" class="inline-flex items-center text-xs font-semibold uppercase tracking-wider px-6 py-3 rounded-full border border-[#302432] text-[#302432] hover:bg-[#302432] hover:text-[#F8F3EC] transition-all transform hover:-translate-y-0.5 shadow-sm">
+                    <span>Start Your Journey</span>
+                    <svg class="w-3.5 h-3.5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="lg:hidden text-[#302432] focus:outline-none p-2">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden lg:hidden absolute top-full left-0 right-0 bg-[#302432] text-[#F8F3EC] border-b border-white/10 px-6 py-8 shadow-2xl transition-all">
+            <div class="flex flex-col space-y-5 text-lg font-medium">
+                <a href="#about" class="mobile-link hover:text-[#C58F91]">About</a>
+                <a href="#coaching" class="mobile-link hover:text-[#C58F91]">Coaching</a>
+                <a href="#approach" class="mobile-link hover:text-[#C58F91]">Approach</a>
+                <a href="#women" class="mobile-link hover:text-[#C58F91]">For Women</a>
+                <a href="#teens" class="mobile-link hover:text-[#C58F91]">For Teens</a>
+                <a href="#contact" class="mobile-link hover:text-[#C58F91]">Contact</a>
+                <div class="pt-4 border-t border-white/10">
+                    <a href="#contact" class="mobile-link inline-flex items-center justify-center w-full py-3.5 rounded-full bg-[#B86F5E] text-white font-semibold text-sm">
+                        <span>Start Your Journey</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-32 pb-24 md:pt-40 md:pb-32 px-6 md:px-12 bg-[#F8F3EC] overflow-hidden">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center relative z-10">
+            
+            <!-- Left Side Content -->
+            <div class="lg:col-span-6 space-y-8">
+                <div id="hero-eyebrow" class="inline-flex items-center px-4 py-1.5 rounded-full bg-[#E8DCCE] text-xs font-semibold uppercase tracking-widest text-[#302432] reveal-hidden">
+                    LIFE COACHING • WOMEN • TEENS
+                </div>
+                
+                <h1 id="hero-headline" class="font-serif text-5xl sm:text-6xl lg:text-7xl font-light leading-[1.08] text-[#302432] reveal-hidden" style="transition-delay: 200ms;">
+                    Become More of <span class="italic font-normal text-[#B86F5E]">Who You Want to Be.</span>
+                </h1>
+                
+                <p id="hero-copy" class="text-lg md:text-xl text-[#302432]/80 font-normal leading-relaxed max-w-xl reveal-hidden" style="transition-delay: 400ms;">
+                    Personalized coaching designed to help women and teens navigate challenges, build positive thinking, discover their strengths, and move toward the person they want to become.
+                </p>
+
+                <div id="hero-ctas" class="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6 pt-2 reveal-hidden" style="transition-delay: 600ms;">
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-[#302432] text-[#F8F3EC] font-semibold hover:bg-[#B86F5E] transition-all transform hover:-translate-y-0.5 shadow-xl group">
+                        <span>Start Your Journey</span>
+                        <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                    
+                    <a href="#contact" class="inline-flex items-center text-base font-semibold text-[#302432] hover:text-[#B86F5E] transition-colors py-2 border-b border-[#302432]/30 hover:border-[#B86F5E]">
+                        <span>Talk With Esther</span>
+                    </a>
+                </div>
+
+                <div id="hero-subtext" class="text-xs text-[#87988A] tracking-widest uppercase font-medium reveal-hidden" style="transition-delay: 800ms;">
+                    Personal • Empowering • Purposeful
+                </div>
+            </div>
+
+            <!-- Right Side Editorial Collage (No Faces) -->
+            <div id="hero-collage" class="lg:col-span-6 relative reveal-hidden" style="transition-delay: 1000ms;">
+                <div class="relative mx-auto max-w-lg lg:max-w-none">
+                    <div class="absolute -inset-6 bg-[#E8DCCE]/50 rounded-[3rem] -z-10 transform rotate-2"></div>
+                    
+                    <!-- Collage Grid -->
+                    <div class="grid grid-cols-12 gap-4 items-center">
+                        <!-- Main Vertical Image -->
+                        <div class="col-span-7">
+                            <div class="overflow-hidden rounded-2xl shadow-2xl border-2 border-[#C5A56A]/40 aspect-[3/4] bg-[#302432]">
+                                <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=800&auto=format&fit=crop" 
+                                     alt="Hands writing in journal warm natural light editorial" 
+                                     class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 image-blur-load"
+                                     onload="this.classList.add('loaded')"
+                                     onerror="this.src='https://placehold.co/600x800/302432/F8F3EC?text=Journal+Writing'">
+                            </div>
+                        </div>
+                        <!-- Two Smaller Overlapping Images -->
+                        <div class="col-span-5 space-y-4">
+                            <div class="overflow-hidden rounded-2xl shadow-xl border-2 border-[#C5A56A]/40 aspect-[4/3] bg-[#302432] transform translate-y-4">
+                                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=600&auto=format&fit=crop" 
+                                     alt="Teen walking backpack sunlight no face" 
+                                     class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 image-blur-load"
+                                     onload="this.classList.add('loaded')"
+                                     onerror="this.src='https://placehold.co/400x300/302432/F8F3EC?text=Teen+Walking'">
+                            </div>
+                            <div class="overflow-hidden rounded-2xl shadow-xl border-2 border-[#C5A56A]/40 aspect-[4/3] bg-[#302432] transform -translate-y-4">
+                                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=600&auto=format&fit=crop" 
+                                     alt="Woman walking doorway sunlight silhouette no face" 
+                                     class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 image-blur-load"
+                                     onload="this.classList.add('loaded')"
+                                     onerror="this.src='https://placehold.co/400x300/302432/F8F3EC?text=Doorway+Sunlight'">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -left-6 bg-[#302432] text-[#F8F3EC] px-6 py-4 rounded-2xl shadow-2xl hidden sm:block border border-[#C5A56A]/40 backdrop-blur-md">
+                        <p class="font-serif text-xl tracking-wide text-[#C5A56A]">A SPACE TO GROW</p>
+                        <p class="text-[11px] font-semibold tracking-wider uppercase text-[#E8DCCE] mt-0.5">One conversation can change the direction.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 02 — Emotional Introduction -->
+    <section class="py-24 md:py-36 px-6 md:px-12 bg-[#E8DCCE]/40 scroll-reveal">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <div class="lg:col-span-6 space-y-6">
+                <span class="text-xs font-semibold uppercase tracking-widest text-[#87988A]">A SPACE TO BREATHE</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-light text-[#302432] leading-tight">
+                    You Don't Have to Navigate Every Challenge Alone.
+                </h2>
+                
+                <div class="space-y-4 text-lg text-[#302432]/80 font-normal leading-relaxed">
+                    <p>
+                        Life can bring moments when you feel stuck, overwhelmed, uncertain, or simply ready for something to change. Coaching creates a dedicated space to step back, understand what you're experiencing, and begin moving forward with greater clarity.
+                    </p>
+                    <p>
+                        Esther's approach focuses on empowering individuals — particularly women and teens — to overcome challenges and become more of who they want to be.
+                    </p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 relative">
+                <div class="relative overflow-hidden rounded-[2.5rem] shadow-2xl border border-[#C5A56A]/30 aspect-[4/3] bg-[#302432]">
+                    <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=1000&auto=format&fit=crop" 
+                         alt="Open window morning sunlight journal no people" 
+                         class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 image-blur-load"
+                         onload="this.classList.add('loaded')"
+                         onerror="this.src='https://placehold.co/800x600/302432/F8F3EC?text=Morning+Sunlight'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#302432]/60 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-6 left-6 right-6 text-[#F8F3EC] text-sm font-serif italic tracking-wide bg-[#302432]/70 backdrop-blur-md px-6 py-3 rounded-xl border border-white/15 text-center">
+                        Pause. Reflect. Grow.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 03 — About Esther -->
+    <section id="about" class="py-24 md:py-36 px-6 md:px-12 bg-[#302432] text-[#F8F3EC] scroll-reveal">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <div class="lg:col-span-5 space-y-6">
+                <div class="p-10 rounded-3xl bg-[#392c3b] border border-[#C5A56A]/30 shadow-2xl space-y-4">
+                    <span class="font-serif text-5xl md:text-6xl text-[#C5A56A] block">ESTHER KATINA</span>
+                    <span class="inline-block px-3 py-1 rounded-full bg-[#C5A56A]/20 text-xs uppercase tracking-widest text-[#C5A56A] font-bold">AAPC CERTIFIED</span>
+                    <p class="text-sm text-[#E8DCCE]/80 pt-2 border-t border-white/10">
+                        Based in Monroe, New York • Dedicated private coaching practice focused on empowering women, teens, and families.
+                    </p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 space-y-8">
+                <div>
+                    <span class="text-xs font-semibold uppercase tracking-widest text-[#87988A]">ABOUT ESTHER KATINA, AAPC</span>
+                    <h2 class="font-serif text-4xl sm:text-5xl font-light text-[#F8F3EC] mt-3 leading-tight">
+                        Coaching That Starts With the Person — Not the Problem.
+                    </h2>
+                </div>
+
+                <div class="space-y-6 text-lg text-[#E8DCCE] font-normal leading-relaxed">
+                    <p>
+                        Esther Katina, AAPC, is a life coach based in Monroe, New York, focused on helping individuals overcome challenges and empowering women and teens to become what they want to be.
+                    </p>
+                    <p>
+                        Her coaching work also includes group topics such as positive thinking, understanding the five basic needs, raising emotionally intelligent children, and positive communication including deepening the marital bond.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 04 — Coaching Areas -->
+    <section id="coaching" class="py-24 md:py-36 px-6 md:px-12 bg-[#F8F3EC] scroll-reveal">
+        <div class="max-w-7xl mx-auto space-y-16">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-xs font-semibold uppercase tracking-widest text-[#87988A]">AREAS OF FOCUS</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-light text-[#302432]">
+                    Coaching For Where You Are — And Where You Want to Go
+                </h2>
+                <p class="text-lg text-[#302432]/80">
+                    Different seasons of life require different kinds of support. Explore specialized guidance tailored to your needs.
+                </p>
+            </div>
+
+            <!-- Expandable Panels Container -->
+            <div class="space-y-6" id="services-container">
+                
+                <!-- Service 01 -->
+                <div class="service-panel group bg-white rounded-3xl p-8 md:p-10 border border-[#C5A56A]/30 shadow-sm hover:shadow-xl transition-all duration-700 cursor-pointer overflow-hidden relative" onclick="togglePanel(this)">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-2">
+                            <span class="font-serif text-3xl text-[#B86F5E]">01</span>
+                            <span class="block text-xs uppercase tracking-widest text-[#87988A] mt-1 font-semibold">WOMEN</span>
+                        </div>
+                        <div class="lg:col-span-6 space-y-2">
+                            <h3 class="font-serif text-2xl md:text-3xl text-[#302432] group-hover:text-[#B86F5E] transition-colors">For Women Ready to Move Forward</h3>
+                            <p class="text-[#302432]/80 text-base leading-relaxed">
+                                Create space to understand challenges, shift your perspective, strengthen your confidence, and move toward the life you want to create.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-3 overflow-hidden rounded-2xl h-36 bg-[#302432] hidden md:block">
+                            <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Woman journaling self reflection editorial" 
+                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 image-blur-load"
+                                 onload="this.classList.add('loaded')"
+                                 onerror="this.src='https://placehold.co/400x300/302432/F8F3EC?text=Journaling'">
+                        </div>
+                        <div class="lg:col-span-1 flex justify-end">
+                            <div class="w-12 h-12 rounded-full bg-[#E8DCCE] flex items-center justify-center transform group-hover:translate-x-2 transition-transform duration-500 text-[#302432]">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 02 -->
+                <div class="service-panel group bg-white rounded-3xl p-8 md:p-10 border border-[#C5A56A]/30 shadow-sm hover:shadow-xl transition-all duration-700 cursor-pointer overflow-hidden relative" onclick="togglePanel(this)">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-2">
+                            <span class="font-serif text-3xl text-[#B86F5E]">02</span>
+                            <span class="block text-xs uppercase tracking-widest text-[#87988A] mt-1 font-semibold">TEENS</span>
+                        </div>
+                        <div class="lg:col-span-6 space-y-2">
+                            <h3 class="font-serif text-2xl md:text-3xl text-[#302432] group-hover:text-[#B86F5E] transition-colors">For Teens Finding Their Voice</h3>
+                            <p class="text-[#302432]/80 text-base leading-relaxed">
+                                A supportive environment to explore challenges, positive thinking, confidence, emotional awareness, and personal growth.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-3 overflow-hidden rounded-2xl h-36 bg-[#302432] hidden md:block">
+                            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Teen girl walking outdoors backpack" 
+                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 image-blur-load"
+                                 onload="this.classList.add('loaded')"
+                                 onerror="this.src='https://placehold.co/400x300/302432/F8F3EC?text=Teen+Outdoor'">
+                        </div>
+                        <div class="lg:col-span-1 flex justify-end">
+                            <div class="w-12 h-12 rounded-full bg-[#E8DCCE] flex items-center justify-center transform group-hover:translate-x-2 transition-transform duration-500 text-[#302432]">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 03 -->
+                <div class="service-panel group bg-white rounded-3xl p-8 md:p-10 border border-[#C5A56A]/30 shadow-sm hover:shadow-xl transition-all duration-700 cursor-pointer overflow-hidden relative" onclick="togglePanel(this)">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-2">
+                            <span class="font-serif text-3xl text-[#B86F5E]">03</span>
+                            <span class="block text-xs uppercase tracking-widest text-[#87988A] mt-1 font-semibold">MINDSET</span>
+                        </div>
+                        <div class="lg:col-span-6 space-y-2">
+                            <h3 class="font-serif text-2xl md:text-3xl text-[#302432] group-hover:text-[#B86F5E] transition-colors">A More Positive Perspective</h3>
+                            <p class="text-[#302432]/80 text-base leading-relaxed">
+                                Explore practical ways to recognize unhelpful patterns and develop a more constructive way of approaching life's challenges.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-3 overflow-hidden rounded-2xl h-36 bg-[#302432] hidden md:block">
+                            <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Sunlight window peaceful room" 
+                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 image-blur-load"
+                                 onload="this.classList.add('loaded')"
+                                 onerror="this.src='https://placehold.co/400x300/302432/F8F3EC?text=Sunlight+Window'">
+                        </div>
+                        <div class="lg:col-span-1 flex justify-end">
+                            <div class="w-12 h-12 rounded-full bg-[#E8DCCE] flex items-center justify-center transform group-hover:translate-x-2 transition-transform duration-500 text-[#302432]">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 04 -->
+                <div class="service-panel group bg-white rounded-3xl p-8 md:p-10 border border-[#C5A56A]/30 shadow-sm hover:shadow-xl transition-all duration-700 cursor-pointer overflow-hidden relative" onclick="togglePanel(this)">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-2">
+                            <span class="font-serif text-3xl text-[#B86F5E]">04</span>
+                            <span class="block text-xs uppercase tracking-widest text-[#87988A] mt-1 font-semibold">EMOTIONS</span>
+                        </div>
+                        <div class="lg:col-span-6 space-y-2">
+                            <h3 class="font-serif text-2xl md:text-3xl text-[#302432] group-hover:text-[#B86F5E] transition-colors">Understanding Emotions. Building Connection.</h3>
+                            <p class="text-[#302432]/80 text-base leading-relaxed">
+                                Develop greater awareness around emotions, communication, and the relationships that matter most.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-3 overflow-hidden rounded-2xl h-36 bg-[#302432] hidden md:block">
+                            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Two chairs conversation concept" 
+                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 image-blur-load"
+                                 onload="this.classList.add('loaded')"
+                                 onerror="this.src='https://placehold.co/400x300/302432/F8F3EC?text=Conversation'">
+                        </div>
+                        <div class="lg:col-span-1 flex justify-end">
+                            <div class="w-12 h-12 rounded-full bg-[#E8DCCE] flex items-center justify-center transform group-hover:translate-x-2 transition-transform duration-500 text-[#302432]">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 05 -->
+                <div class="service-panel group bg-white rounded-3xl p-8 md:p-10 border border-[#C5A56A]/30 shadow-sm hover:shadow-xl transition-all duration-700 cursor-pointer overflow-hidden relative" onclick="togglePanel(this)">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-2">
+                            <span class="font-serif text-3xl text-[#B86F5E]">05</span>
+                            <span class="block text-xs uppercase tracking-widest text-[#87988A] mt-1 font-semibold">PARENTING</span>
+                        </div>
+                        <div class="lg:col-span-6 space-y-2">
+                            <h3 class="font-serif text-2xl md:text-3xl text-[#302432] group-hover:text-[#B86F5E] transition-colors">Helping Raise Emotionally Intelligent Children</h3>
+                            <p class="text-[#302432]/80 text-base leading-relaxed">
+                                Explore concepts around emotional intelligence, positive communication, and understanding the fundamental needs that shape healthy development.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-3 overflow-hidden rounded-2xl h-36 bg-[#302432] hidden md:block">
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Parent child hands warm home" 
+                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 image-blur-load"
+                                 onload="this.classList.add('loaded')"
+                                 onerror="this.src='https://placehold.co/400x300/302432/F8F3EC?text=Parent+Child'">
+                        </div>
+                        <div class="lg:col-span-1 flex justify-end">
+                            <div class="w-12 h-12 rounded-full bg-[#E8DCCE] flex items-center justify-center transform group-hover:translate-x-2 transition-transform duration-500 text-[#302432]">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 06 -->
+                <div class="service-panel group bg-white rounded-3xl p-8 md:p-10 border border-[#C5A56A]/30 shadow-sm hover:shadow-xl transition-all duration-700 cursor-pointer overflow-hidden relative" onclick="togglePanel(this)">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-2">
+                            <span class="font-serif text-3xl text-[#B86F5E]">06</span>
+                            <span class="block text-xs uppercase tracking-widest text-[#87988A] mt-1 font-semibold">GROUPS</span>
+                        </div>
+                        <div class="lg:col-span-6 space-y-2">
+                            <h3 class="font-serif text-2xl md:text-3xl text-[#302432] group-hover:text-[#B86F5E] transition-colors">Grow Together — Group Coaching</h3>
+                            <p class="text-[#302432]/80 text-base leading-relaxed">
+                                Interactive group coaching around topics including positive thinking, the five basic needs, and emotional intelligence.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-3 overflow-hidden rounded-2xl h-36 bg-[#302432] hidden md:block">
+                            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=600&auto=format&fit=crop" 
+                                 alt="Women workshop hands no faces" 
+                                 class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 image-blur-load"
+                                 onload="this.classList.add('loaded')"
+                                 onerror="this.src='https://placehold.co/400x300/302432/F8F3EC?text=Group+Workshop'">
+                        </div>
+                        <div class="lg:col-span-1 flex justify-end">
+                            <div class="w-12 h-12 rounded-full bg-[#E8DCCE] flex items-center justify-center transform group-hover:translate-x-2 transition-transform duration-500 text-[#302432]">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 05 — The Approach -->
+    <section id="approach" class="py-24 md:py-36 px-6 md:px-12 bg-[#E8DCCE]/30 scroll-reveal">
+        <div class="max-w-5xl mx-auto space-y-16">
+            
+            <div class="text-center max-w-2xl mx-auto space-y-4">
+                <span class="text-xs font-semibold uppercase tracking-widest text-[#87988A]">THE PROCESS</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-light text-[#302432]">
+                    Growth Doesn't Have to Happen All at Once
+                </h2>
+                <p class="text-lg text-[#302432]/80">Start where you are. Take the next step.</p>
+            </div>
+
+            <!-- Vertical Timeline Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+                
+                <div class="p-8 rounded-3xl bg-white border border-[#C5A56A]/30 space-y-4 shadow-sm hover:shadow-md transition-shadow">
+                    <span class="font-serif text-3xl text-[#B86F5E]">01 — LISTEN</span>
+                    <h3 class="font-serif text-2xl text-[#302432]">Your Story</h3>
+                    <p class="text-[#302432]/80 text-sm leading-relaxed">
+                        Create space for your story, your concerns, and what you want to change.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-white border border-[#C5A56A]/30 space-y-4 shadow-sm hover:shadow-md transition-shadow">
+                    <span class="font-serif text-3xl text-[#B86F5E]">02 — UNDERSTAND</span>
+                    <h3 class="font-serif text-2xl text-[#302432]">Perspective</h3>
+                    <p class="text-[#302432]/80 text-sm leading-relaxed">
+                        Explore the patterns, perspectives, and challenges influencing where you are today.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-white border border-[#C5A56A]/30 space-y-4 shadow-sm hover:shadow-md transition-shadow">
+                    <span class="font-serif text-3xl text-[#B86F5E]">03 — EMPOWER</span>
+                    <h3 class="font-serif text-2xl text-[#302432]">Strengths</h3>
+                    <p class="text-[#302432]/80 text-sm leading-relaxed">
+                        Identify strengths and possibilities that can help you move forward.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-white border border-[#C5A56A]/30 space-y-4 shadow-sm hover:shadow-md transition-shadow">
+                    <span class="font-serif text-3xl text-[#B86F5E]">04 — GROW</span>
+                    <h3 class="font-serif text-2xl text-[#302432]">Action</h3>
+                    <p class="text-[#302432]/80 text-sm leading-relaxed">
+                        Turn insight into practical steps toward the person you want to become.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 06 — For Women -->
+    <section id="women" class="py-24 md:py-36 px-6 md:px-12 bg-[#E8DCCE] text-[#302432] scroll-reveal">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <div class="lg:col-span-6 space-y-8">
+                <span class="text-xs font-semibold uppercase tracking-widest text-[#B86F5E]">WOMEN'S COACHING</span>
+                <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-light leading-tight text-[#302432]">
+                    For the Woman Who Knows She's Ready for Something Different.
+                </h2>
+                
+                <p class="text-lg text-[#302432]/80 font-normal leading-relaxed">
+                    Sometimes growth begins with recognizing that the way things are today isn't necessarily the way they have to remain.
+                </p>
+
+                <div class="space-y-6 pt-4">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-8 h-8 rounded-full bg-[#302432] text-[#F8F3EC] flex items-center justify-center font-serif text-lg flex-shrink-0 mt-1">1</div>
+                        <div>
+                            <h3 class="font-serif text-2xl text-[#302432]">Clarity</h3>
+                            <p class="text-sm text-[#302432]/80 mt-1">Understand what you truly want and clear away internal friction.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-8 h-8 rounded-full bg-[#302432] text-[#F8F3EC] flex items-center justify-center font-serif text-lg flex-shrink-0 mt-1">2</div>
+                        <div>
+                            <h3 class="font-serif text-2xl text-[#302432]">Confidence</h3>
+                            <p class="text-sm text-[#302432]/80 mt-1">Reconnect with your innate strengths and personal power.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start space-x-4">
+                        <div class="w-8 h-8 rounded-full bg-[#302432] text-[#F8F3EC] flex items-center justify-center font-serif text-lg flex-shrink-0 mt-1">3</div>
+                        <div>
+                            <h3 class="font-serif text-2xl text-[#302432]">Direction</h3>
+                            <p class="text-sm text-[#302432]/80 mt-1">Move toward meaningful, lasting personal change.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <a href="#contact" class="inline-flex items-center px-8 py-4 rounded-full bg-[#302432] text-[#F8F3EC] font-semibold hover:bg-[#B86F5E] transition-all shadow-lg">
+                        <span>Explore Women's Coaching</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 relative">
+                <div class="relative overflow-hidden rounded-[2.5rem] shadow-2xl border-2 border-[#C5A56A]/40 aspect-[4/5] bg-[#302432]">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" 
+                         alt="Woman walking through doorway silhouette warm sunlight no face" 
+                         class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 image-blur-load"
+                         onload="this.classList.add('loaded')"
+                         onerror="this.src='https://placehold.co/600x800/302432/F8F3EC?text=Woman+Coaching'">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 07 — For Teens -->
+    <section id="teens" class="py-24 md:py-36 px-6 md:px-12 bg-[#87988A]/20 text-[#302432] scroll-reveal">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            
+            <div class="lg:col-span-6 relative order-2 lg:order-1">
+                <div class="relative overflow-hidden rounded-[2.5rem] shadow-2xl border-2 border-[#C5A56A]/40 aspect-[4/5] bg-[#302432]">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop" 
+                         alt="Teen walking outdoors back view no face sunlight" 
+                         class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700 image-blur-load"
+                         onload="this.classList.add('loaded')"
+                         onerror="this.src='https://placehold.co/600x800/302432/F8F3EC?text=Teen+Coaching'">
+                </div>
+            </div>
+
+            <div class="lg:col-span-6 space-y-8 order-1 lg:order-2">
+                <span class="text-xs font-semibold uppercase tracking-widest text-[#B86F5E]">TEEN COACHING</span>
+                <h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-light leading-tight text-[#302432]">
+                    A Safe Space to Be Heard.
+                </h2>
+                
+                <p class="text-lg text-[#302432]/80 font-normal leading-relaxed">
+                    Teen years can bring questions, pressure, uncertainty, and change. Coaching can provide a dedicated space to explore challenges, develop positive thinking, and build greater emotional awareness.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                    <div class="p-6 rounded-2xl bg-white border border-[#C5A56A]/30 text-center space-y-2">
+                        <span class="font-serif text-2xl text-[#B86F5E] block">01</span>
+                        <h3 class="font-serif text-xl text-[#302432]">Be Heard</h3>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white border border-[#C5A56A]/30 text-center space-y-2">
+                        <span class="font-serif text-2xl text-[#B86F5E] block">02</span>
+                        <h3 class="font-serif text-xl text-[#302432]">Confidence</h3>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-white border border-[#C5A56A]/30 text-center space-y-2">
+                        <span class="font-serif text-2xl text-[#B86F5E] block">03</span>
+                        <h3 class="font-serif text-xl text-[#302432]">Perspective</h3>
+                    </div>
+                </div>
+
+                <div class="pt-4">
+                    <a href="#contact" class="inline-flex items-center px-8 py-4 rounded-full bg-[#302432] text-[#F8F3EC] font-semibold hover:bg-[#B86F5E] transition-all shadow-lg">
+                        <span>Learn About Teen Coaching</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 08 — Why Choose Esther -->
+    <section id="why" class="py-24 md:py-36 px-6 md:px-12 bg-[#302432] text-[#F8F3EC] scroll-reveal">
+        <div class="max-w-6xl mx-auto space-y-16">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-6">
+                <span class="text-xs font-semibold uppercase tracking-widest text-[#87988A]">DISTINCTIVE APPROACH</span>
+                <h2 class="font-serif text-4xl sm:text-6xl font-light text-[#F8F3EC] leading-tight">
+                    Empowerment Starts With <br><span class="italic text-[#C5A56A]">Being Understood.</span>
+                </h2>
+            </div>
+
+            <!-- 4 Grid Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="p-10 rounded-3xl bg-[#392c3b] border border-[#C5A56A]/30 shadow-lg space-y-4">
+                    <span class="font-serif text-3xl text-[#C5A56A]">01</span>
+                    <h3 class="font-serif text-3xl text-[#F8F3EC]">Personal</h3>
+                    <p class="text-[#E8DCCE] text-base leading-relaxed">
+                        Coaching centered on the individual rather than a one-size-fits-all formula.
+                    </p>
+                </div>
+
+                <div class="p-10 rounded-3xl bg-[#392c3b] border border-[#C5A56A]/30 shadow-lg space-y-4">
+                    <span class="font-serif text-3xl text-[#C5A56A]">02</span>
+                    <h3 class="font-serif text-3xl text-[#F8F3EC]">Empowering</h3>
+                    <p class="text-[#E8DCCE] text-base leading-relaxed">
+                        Focused on helping individuals recognize possibilities and become what they want to be.
+                    </p>
+                </div>
+
+                <div class="p-10 rounded-3xl bg-[#392c3b] border border-[#C5A56A]/30 shadow-lg space-y-4">
+                    <span class="font-serif text-3xl text-[#C5A56A]">03</span>
+                    <h3 class="font-serif text-3xl text-[#F8F3EC]">Inclusive</h3>
+                    <p class="text-[#E8DCCE] text-base leading-relaxed">
+                        A coaching focus that includes women, teens, parents, and group settings.
+                    </p>
+                </div>
+
+                <div class="p-10 rounded-3xl bg-[#392c3b] border border-[#C5A56A]/30 shadow-lg space-y-4">
+                    <span class="font-serif text-3xl text-[#C5A56A]">04</span>
+                    <h3 class="font-serif text-3xl text-[#F8F3EC]">Practical</h3>
+                    <p class="text-[#E8DCCE] text-base leading-relaxed">
+                        Conversations designed to help people understand challenges and identify meaningful next steps.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 09 — Coaching Experience Trust Section -->
+    <section class="py-24 md:py-36 px-6 md:px-12 bg-[#F8F3EC] scroll-reveal">
+        <div class="max-w-5xl mx-auto space-y-16 text-center">
+            
+            <div class="space-y-4 max-w-2xl mx-auto">
+                <span class="text-xs font-semibold uppercase tracking-widest text-[#87988A]">FOUNDATION OF TRUST</span>
+                <h2 class="font-serif text-4xl sm:text-5xl font-light text-[#302432]">
+                    A Coaching Experience Built Around You
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                
+                <div class="p-8 rounded-3xl bg-white border border-[#C5A56A]/30 space-y-3 shadow-sm">
+                    <h3 class="font-serif text-2xl text-[#302432]">Understanding</h3>
+                    <p class="text-[#302432]/80 text-sm leading-relaxed">
+                        Start with where you are today in a safe, supportive environment.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-white border border-[#C5A56A]/30 space-y-3 shadow-sm">
+                    <h3 class="font-serif text-2xl text-[#302432]">Empowerment</h3>
+                    <p class="text-[#302432]/80 text-sm leading-relaxed">
+                        Recognize what is possible and reconnect with your personal strength.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-white border border-[#C5A56A]/30 space-y-3 shadow-sm">
+                    <h3 class="font-serif text-2xl text-[#302432]">Growth</h3>
+                    <p class="text-[#302432]/80 text-sm leading-relaxed">
+                        Take meaningful steps forward with clarity and purposeful direction.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="pt-4 space-y-4">
+                <p class="text-base text-[#302432]/80 font-medium italic font-serif text-xl">
+                    Your journey is personal. Your coaching should be too.
+                </p>
+                <div>
+                    <a href="#contact" class="inline-flex items-center px-8 py-4 rounded-full bg-[#302432] text-[#F8F3EC] font-semibold hover:bg-[#B86F5E] transition-all shadow-lg">
+                        <span>Start Your Journey</span>
+                        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 10 — Cinematic Visual Break -->
+    <section class="relative py-32 md:py-44 bg-[#302432] overflow-hidden text-center text-[#F8F3EC]">
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?q=80&w=1600&auto=format&fit=crop" 
+                 alt="Open road sunrise personal growth cinematic" 
+                 class="w-full h-full object-cover image-blur-load"
+                 onload="this.classList.add('loaded')"
+                 onerror="this.src='https://placehold.co/1600x900/302432/C5A56A?text=Sunrise+Road'">
+        </div>
+        <div class="max-w-4xl mx-auto px-6 relative z-10 space-y-8">
+            <span class="text-xs font-semibold uppercase tracking-widest text-[#C5A56A]">BEGINNINGS</span>
+            <blockquote class="font-serif text-3xl sm:text-5xl md:text-6xl text-[#F8F3EC] italic leading-relaxed">
+                “You Don't Need to Have Everything Figured Out.”
+            </blockquote>
+            <p class="text-xl text-[#E8DCCE]">You just need a place to begin.</p>
+            <div class="pt-4">
+                <a href="#contact" class="inline-flex items-center px-8 py-4 rounded-full bg-[#C5A56A] text-[#302432] font-semibold hover:bg-white transition-all shadow-xl">
+                    <span>Begin Your Journey</span>
+                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 11 — Primary CTA -->
+    <section class="py-24 md:py-32 px-6 md:px-12 bg-[#C58F91]/20 border-t border-b border-[#C5A56A]/20">
+        <div class="max-w-4xl mx-auto text-center space-y-8 relative">
+            <div class="absolute -top-12 right-0 w-24 h-24 rounded-full bg-[#C5A56A]/20 flex items-center justify-center font-serif text-sm font-bold tracking-widest text-[#302432] animate-pulse hidden sm:flex">
+                GROW
+            </div>
+
+            <span class="text-xs font-semibold uppercase tracking-widest text-[#B86F5E]">TAKE THE NEXT STEP</span>
+            
+            <h2 class="font-serif text-4xl sm:text-6xl font-light text-[#302432] leading-tight">
+                What Would You Like to Change?
+            </h2>
+            
+            <p class="text-lg sm:text-xl text-[#302432]/80 max-w-2xl mx-auto font-normal leading-relaxed">
+                Whether you're facing a personal challenge, supporting a teen, working through communication, or simply ready to grow, start with a conversation.
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 pt-4">
+                <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center px-9 py-4 rounded-full bg-[#302432] text-[#F8F3EC] font-semibold hover:bg-[#B86F5E] transition-all shadow-xl group">
+                    <span>Start a Private Conversation</span>
+                    <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </a>
+                
+                <a href="tel:8454927055" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full border border-[#302432]/40 text-[#302432] font-semibold hover:bg-[#302432]/10 transition-colors">
+                    Call 845-492-7055
+                </a>
+            </div>
+
+            <div class="pt-4">
+                <a href="mailto:esterkatina@gmail.com" class="text-sm font-semibold text-[#302432] hover:text-[#B86F5E] underline transition-colors">
+                    Email Esther (esterkatina@gmail.com)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 12 — Contact -->
+    <section id="contact" class="py-24 md:py-36 px-6 md:px-12 bg-[#F8F3EC] scroll-reveal">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            
+            <div class="lg:col-span-5 space-y-8">
+                <div class="space-y-4">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-[#87988A]">LET'S CONNECT</span>
+                    <h2 class="font-serif text-4xl sm:text-6xl font-light text-[#302432] leading-tight">
+                        Your Next Chapter Can Start With a Conversation.
+                    </h2>
+                    <p class="text-lg text-[#302432]/80 leading-relaxed">
+                        Reach out to Esther to learn more about coaching and explore whether it may be a good fit for what you're looking for.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-3xl bg-[#E8DCCE]/60 border border-[#C5A56A]/30 shadow-sm space-y-6">
+                    <div>
+                        <h3 class="font-serif text-2xl font-semibold text-[#302432]">Esther Katina, AAPC</h3>
+                        <p class="text-sm text-[#B86F5E] font-medium mt-1">Life Coach • Monroe, NY</p>
+                    </div>
+
+                    <div class="space-y-3 pt-4 border-t border-[#302432]/10">
+                        <a href="tel:8454927055" class="flex items-center text-base font-semibold text-[#302432] hover:text-[#B86F5E] transition-colors">
+                            <svg class="w-5 h-5 mr-3 text-[#B86F5E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <span>845-492-7055</span>
+                        </a>
+                        <a href="tel:8457839259" class="flex items-center text-base font-semibold text-[#302432] hover:text-[#B86F5E] transition-colors">
+                            <svg class="w-5 h-5 mr-3 text-[#B86F5E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <span>845-783-9259 (Alt)</span>
+                        </a>
+                        <a href="mailto:esterkatina@gmail.com" class="flex items-center text-base font-semibold text-[#302432] hover:text-[#B86F5E] transition-colors">
+                            <svg class="w-5 h-5 mr-3 text-[#B86F5E]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <span>esterkatina@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7">
+                <div class="bg-white p-8 sm:p-12 rounded-[2.5rem] shadow-xl border border-[#C5A56A]/30 relative">
+                    
+                    <form id="contact-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="relative">
+                                <label class="block text-xs uppercase tracking-wider text-[#302432] font-semibold mb-2">Your Name</label>
+                                <input type="text" required class="w-full px-4 py-3.5 rounded-xl bg-[#F8F3EC] border border-[#302432]/15 focus:border-[#B86F5E] focus:bg-white focus:outline-none transition-all text-[#302432]" placeholder="Full Name">
+                            </div>
+                            <div class="relative">
+                                <label class="block text-xs uppercase tracking-wider text-[#302432] font-semibold mb-2">Email Address</label>
+                                <input type="email" required class="w-full px-4 py-3.5 rounded-xl bg-[#F8F3EC] border border-[#302432]/15 focus:border-[#B86F5E] focus:bg-white focus:outline-none transition-all text-[#302432]" placeholder="email@example.com">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div class="relative">
+                                <label class="block text-xs uppercase tracking-wider text-[#302432] font-semibold mb-2">Phone Number</label>
+                                <input type="tel" class="w-full px-4 py-3.5 rounded-xl bg-[#F8F3EC] border border-[#302432]/15 focus:border-[#B86F5E] focus:bg-white focus:outline-none transition-all text-[#302432]" placeholder="(845) 000-0000">
+                            </div>
+                            <div class="relative">
+                                <label class="block text-xs uppercase tracking-wider text-[#302432] font-semibold mb-2">I'm interested in:</label>
+                                <select class="w-full px-4 py-3.5 rounded-xl bg-[#F8F3EC] border border-[#302432]/15 focus:border-[#B86F5E] focus:bg-white focus:outline-none transition-all text-[#302432]">
+                                    <option>Women's Coaching</option>
+                                    <option>Teen Coaching</option>
+                                    <option>Positive Thinking</option>
+                                    <option>Emotional Intelligence</option>
+                                    <option>Parent Guidance</option>
+                                    <option>Group Coaching</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <label class="block text-xs uppercase tracking-wider text-[#302432] font-semibold mb-2">Tell me a little about what you're looking for</label>
+                            <textarea rows="4" required class="w-full px-4 py-3.5 rounded-xl bg-[#F8F3EC] border border-[#302432]/15 focus:border-[#B86F5E] focus:bg-white focus:outline-none transition-all text-[#302432]" placeholder="Share a few details..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full py-4 px-8 rounded-xl bg-[#302432] text-[#F8F3EC] font-semibold hover:bg-[#B86F5E] transition-all shadow-lg flex items-center justify-center space-x-2 group">
+                            <span>Send My Inquiry</span>
+                            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </button>
+
+                        <div id="form-success" class="hidden p-4 rounded-xl bg-[#E8DCCE] border border-[#C5A56A] text-[#302432] text-center font-medium">
+                            Thank you. Your message has been received.
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#302432] text-[#F8F3EC] py-16 px-6 md:px-12 border-t border-white/10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0">
+            
+            <div class="text-center md:text-left space-y-2">
+                <span class="font-serif text-xl md:text-2xl font-semibold tracking-wide text-[#F8F3EC]">ESTHER KATINA, AAPC</span>
+                <span class="block text-[11px] uppercase tracking-widest text-[#87988A]">LIFE COACH • WOMEN & TEENS</span>
+            </div>
+
+            <div class="flex flex-wrap justify-center space-x-6 text-sm text-[#E8DCCE]">
+                <a href="#about" class="hover:text-[#C58F91] transition-colors">About</a>
+                <a href="#coaching" class="hover:text-[#C58F91] transition-colors">Coaching</a>
+                <a href="#approach" class="hover:text-[#C58F91] transition-colors">Approach</a>
+                <a href="#women" class="hover:text-[#C58F91] transition-colors">For Women</a>
+                <a href="#teens" class="hover:text-[#C58F91] transition-colors">For Teens</a>
+                <a href="#contact" class="hover:text-[#C58F91] transition-colors">Contact</a>
+            </div>
+
+            <div class="text-center md:text-right space-y-1 text-sm text-[#E8DCCE]">
+                <p>845-492-7055 · esterkatina@gmail.com</p>
+            </div>
+
+        </div>
+
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-white/10 text-center text-xs text-[#E8DCCE]/60 space-y-2">
+            <p>© 2026 Esther Katina. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts & Cinematic Animations -->
+    <script>
+        // Cinematic Hero Load Trigger
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('hero-eyebrow').classList.add('reveal-visible');
+                document.getElementById('hero-headline').classList.add('reveal-visible');
+                document.getElementById('hero-copy').classList.add('reveal-visible');
+                document.getElementById('hero-ctas').classList.add('reveal-visible');
+                document.getElementById('hero-subtext').classList.add('reveal-visible');
+                document.getElementById('hero-collage').classList.add('reveal-visible');
+            }, 100);
+        });
+
+        // Scroll Reveal Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(section => {
+            section.classList.add('reveal-hidden');
+            observer.observe(section);
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Sticky Header Effect
+        const header = document.getElementById('site-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                header.classList.add('bg-[#F8F3EC]/90', 'backdrop-blur-md', 'py-4', 'shadow-sm');
+                header.classList.remove('py-6', 'bg-transparent');
+            } else {
+                header.classList.remove('bg-[#F8F3EC]/90', 'backdrop-blur-md', 'shadow-sm');
+                header.classList.add('py-6', 'bg-transparent');
+            }
+        });
+
+        // Interactive Service Panels Expansion
+        function togglePanel(panel) {
+            panel.classList.toggle('ring-2');
+            panel.classList.toggle('ring-[#B86F5E]');
+        }
+
+        // Form Submission Handler
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const form = document.getElementById('contact-form');
+            const successMsg = document.getElementById('form-success');
+            
+            successMsg.classList.remove('hidden');
+            form.reset();
+            
+            setTimeout(() => {
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 100);
+        }
+    </script>
+
+</body>
+</html>
